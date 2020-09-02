@@ -192,7 +192,7 @@ ORDER BY order_count;
 
 Note: This step does not use PostgreSQL!
 
-* [ ] ***Take the following data and normalize it into a 3NF database***
+* [x] ***Take the following data and normalize it into a 3NF database***
 
 | Person Name | Pet Name | Pet Type | Pet Name 2 | Pet Type 2 | Pet Name 3 | Pet Type 3 | Fenced Yard | City Dweller |
 |-------------|----------|----------|------------|------------|------------|------------|-------------|--------------|
@@ -205,41 +205,35 @@ Below are some empty tables to be used to normalize the database
 * Not all of the cells will contain data in the final solution
 * Feel free to edit these tables as necessary
 
-Table Name:
+Table Name: owners
 
-|            |            |            |            |            |            |            |            |            |
+| id         | owner_name |fenced-yard |city_dweller|            |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+| 1          | Jane       | false      | true       |            |            |            |            |            |
+| 2          | Bob        | false      | false      |            |            |            |            |            |
+| 3          | Sam        | true       | false      |            |            |            |            |            |
 
-Table Name:
+Table Name: pet_type
 
-|            |            |            |            |            |            |            |            |            |
+| id         | type       |            |            |            |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+| 1          | Dog        |            |            |            |            |            |            |            |
+| 2          | Horse      |            |            |            |            |            |            |            |
+| 3          | Cat        |            |            |            |            |            |            |            |
+| 4          | Turtle     |            |            |            |            |            |            |            |
+| 5          | Fish       |            |            |            |            |            |            |            |
 
-Table Name:
+Table Name: pets
 
-|            |            |            |            |            |            |            |            |            |
+| id         | name       | pet_type   | owner_id   |            |            |            |            |
 |------------|------------|------------|------------|------------|------------|------------|------------|------------|
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
-|            |            |            |            |            |            |            |            |            |
+| 1          | Ellie      | 1          | 1          |            |            |            |            |            |
+| 2          | Joe        | 2          | 2          |            |            |            |            |            |
+| 3          | Ginger     | 1          | 3          |            |            |            |            |            |
+| 4          | Tiger      | 3          | 1          |            |            |            |            |            |
+| 5          | Miss Kitty | 3          | 3          |            |            |            |            |            |
+| 6          | Toby       | 4          | 1          |            |            |            |            |            |
+| 7          | Bubble     | 5          | 3          |            |            |            |            |            |
 
 Table Name:
 
